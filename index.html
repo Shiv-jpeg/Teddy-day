@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>For My BIVI 🧸</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+html,body{
+  height:100%;
+  font-family:'Poppins',sans-serif;
+  overflow:hidden;
+  background:#fff;
+}
+
+.swiper{
+  height:100vh;
+  overflow-y:scroll;
+  scroll-snap-type:y mandatory;
+  -webkit-overflow-scrolling:touch;
+}
+
+section{
+  height:100vh;
+  scroll-snap-align:start;
+  padding:44px 26px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+/* dreamy blur */
+section::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  backdrop-filter:blur(1.3px);
+  z-index:0;
+}
+section > *{position:relative;z-index:1}
+
+h1,h2{
+  font-family:'Playfair Display',serif;
+  color:#6b3a4b;
+}
+
+p{
+  font-size:1.08rem;
+  line-height:1.9;
+  color:#6a4a57;
+  max-width:560px;
+}
+
+/* teddy pastel backgrounds */
+.bg1{background:linear-gradient(135deg,#ffe6f0,#fff5fa)}
+.bg2{background:linear-gradient(135deg,#fff0f6,#ffe1ec)}
+.bg3{background:linear-gradient(135deg,#ffeaf2,#fff7fb)}
+.bg4{background:linear-gradient(135deg,#fff5f8,#ffdfe9)}
+.bg5{background:linear-gradient(135deg,#ffe1ec,#fff0f6)}
+
+.glow{
+  animation:glow 2.5s infinite alternate;
+}
+@keyframes glow{
+  from{transform:scale(1)}
+  to{transform:scale(1.06)}
+}
+
+/* 🧸 TEDDY FLOAT */
+.teddy{
+  font-size:64px;
+  animation:teddyFloat 3.5s ease-in-out infinite;
+  filter:drop-shadow(0 8px 12px rgba(0,0,0,.15));
+}
+@keyframes teddyFloat{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-14px)}
+  100%{transform:translateY(0)}
+}
+
+/* floating hearts */
+.heart{
+  position:fixed;
+  bottom:-20px;
+  font-size:18px;
+  animation:float 7s linear infinite;
+  pointer-events:none;
+}
+@keyframes float{
+  to{
+    transform:translateY(-120vh) translateX(30px);
+    opacity:0;
+  }
+}
+
+/* hug animation */
+.hug{
+  position:fixed;
+  top:-20px;
+  font-size:20px;
+  animation:fall linear infinite;
+  pointer-events:none;
+}
+@keyframes fall{
+  to{
+    transform:translateY(120vh) rotate(360deg);
+    opacity:0;
+  }
+}
+
+/* buttons */
+.btn{
+  margin-top:28px;
+  padding:14px 36px;
+  border-radius:40px;
+  border:none;
+  background:#e56b9f;
+  color:white;
+  font-size:1.05rem;
+}
+
+/* music overlay */
+#musicOverlay{
+  position:fixed;
+  inset:0;
+  background:rgba(255,235,245,.97);
+  z-index:999;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+#musicOverlay button{
+  margin-top:18px;
+  padding:14px 30px;
+  border:none;
+  border-radius:30px;
+  background:#e56b9f;
+  color:white;
+}
+</style>
+</head>
+
+<body>
+
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div id="musicOverlay">
+  <h2>For my BIVI 🧸</h2>
+  <p>Tap once… here’s a warm hug 🤍</p>
+  <button onclick="startMusic()">Start</button>
+</div>
+
+<div class="swiper">
+
+<!-- PAGE 1 -->
+<section class="bg1 glow">
+  <div class="teddy">🧸</div>
+  <h1>Happy Teddy Day 🧸</h1>
+  <p>For my BIVI… soft, warm, and full of love.</p>
+</section>
+
+<!-- PAGE 2 -->
+<section class="bg2">
+  <h2>Why a Teddy?</h2>
+  <p>
+    Because teddies don’t judge.  
+    They just listen, hug,  
+    and stay forever.
+  </p>
+</section>
+
+<!-- PAGE 3 -->
+<section class="bg3">
+  <div class="teddy">🧸</div>
+  <h2>Just Like You, Iffu 🤍</h2>
+  <p>
+    Soft heart.  
+    Pure warmth.  
+    My safest comfort.
+  </p>
+</section>
+
+<!-- PAGE 4 -->
+<section class="bg4">
+  <h2>For My BIVI 🎀</h2>
+  <p>
+    Whenever you feel low,  
+    imagine this teddy hugging you  
+    from me.
+  </p>
+</section>
+
+<!-- PAGE 5 -->
+<section class="bg5">
+  <h2>If I Could Gift You…</h2>
+  <p>
+    I’d gift you  
+    a hug that never fades  
+    and a smile that stays.
+  </p>
+</section>
+
+<!-- PAGE 6 -->
+<section class="bg2">
+  <h2>Tap for a Teddy Hug 🧸</h2>
+  <button class="btn" onclick="hug()">Get Hug</button>
+</section>
+
+<!-- PAGE 7 -->
+<section class="bg3">
+  <h2>Little Secret 🤍</h2>
+  <p>
+    The world feels kinder  
+    when you’re around.
+  </p>
+</section>
+
+<!-- PAGE 8 -->
+<section class="bg4">
+  <div class="teddy">🧸</div>
+  <h2>My Comfort Place</h2>
+  <p>
+    Not a room.  
+    Not a place.  
+    Just you.
+  </p>
+</section>
+
+<!-- PAGE 9 -->
+<section class="bg5">
+  <h2>One More Hug</h2>
+  <p>
+    If hugs could travel through screens,  
+    you’d feel this one right now.
+  </p>
+</section>
+
+<!-- PAGE 10 -->
+<section class="bg1 glow">
+  <div class="teddy">🧸</div>
+  <h1>🧸 For My BIVI 🧸</h1>
+  <p>
+    Happy Teddy Day, Iffu.  
+    Always here for you.
+  </p>
+</section>
+
+</div>
+
+<script>
+function startMusic(){
+  document.getElementById("bgMusic").play().then(()=>{
+    document.getElementById("musicOverlay").style.display="none";
+  });
+}
+
+/* floating hearts */
+setInterval(()=>{
+  const h=document.createElement("div");
+  h.className="heart";
+  h.innerText="💗";
+  h.style.left=Math.random()*100+"vw";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),7000);
+},900);
+
+/* falling hugs */
+setInterval(()=>{
+  const u=document.createElement("div");
+  u.className="hug";
+  u.innerText="🤗";
+  u.style.left=Math.random()*100+"vw";
+  u.style.animationDuration=(4+Math.random()*3)+"s";
+  document.body.appendChild(u);
+  setTimeout(()=>u.remove(),7000);
+},1100);
+
+/* hug button */
+function hug(){
+  for(let i=0;i<6;i++){
+    setTimeout(()=>spawnHug(),i*120);
+  }
+}
+function spawnHug(){
+  const u=document.createElement("div");
+  u.className="hug";
+  u.innerText="🧸";
+  u.style.left=Math.random()*100+"vw";
+  u.style.animationDuration="4s";
+  document.body.appendChild(u);
+  setTimeout(()=>u.remove(),5000);
+}
+
+/* Easter egg */
+let taps=0;
+document.body.addEventListener("click",()=>{
+  taps++;
+  if(taps===28){
+    alert("🤍 No matter what, I’m always hugging you, my BIVI 🤍");
+  }
+});
+</script>
+
+</body>
+</html>
